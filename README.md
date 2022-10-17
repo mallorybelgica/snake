@@ -8,4 +8,4 @@ React - Typescript - HTML - CSS
 
 ### Demo
 
-feedthesnake-app.netlify.app
+https://feedthesnake-app.netlify.app
