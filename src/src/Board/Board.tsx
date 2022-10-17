@@ -175,7 +175,7 @@ const Board = () => {
     }
     pieces.push(snakeHead);
     setSnakePieces(pieces);
-    setScore((newScore += 20));
+    setScore((newScore += speed));
     generateFood();
   };
 
