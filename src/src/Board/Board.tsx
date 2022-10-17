@@ -159,6 +159,8 @@ const Board = () => {
     let snakeHead = pieces[pieces.length - 1];
     let newScore = score;
 
+    setScore((newScore += speed));
+
     switch (snakeDirection) {
       case "RIGHT":
         snakeHead = [snakeHead[0] + 20, snakeHead[1]];
@@ -175,8 +177,22 @@ const Board = () => {
     }
     pieces.push(snakeHead);
     setSnakePieces(pieces);
-    setScore((newScore += speed));
+    updateScore();
     generateFood();
+  };
+
+  const updateScore = () => {
+    switch (speed) {
+      case 75:
+        setScore(foodSize * 1);
+        break;
+      case 50:
+        setScore(foodSize * 2);
+        break;
+      case 25:
+        setScore(foodSize * 3);
+        break;
+    }
   };
 
   const gameOver = () => {
