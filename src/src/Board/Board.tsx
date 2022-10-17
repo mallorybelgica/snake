@@ -182,15 +182,16 @@ const Board = () => {
   };
 
   const updateScore = () => {
+    let newScore = score;
     switch (speed) {
       case 75:
-        setScore(foodSize * 1);
+        setScore((newScore += foodSize * 1));
         break;
       case 50:
-        setScore(foodSize * 2);
+        setScore((newScore += foodSize * 2));
         break;
       case 25:
-        setScore(foodSize * 3);
+        setScore((newScore += foodSize * 3));
         break;
     }
   };
