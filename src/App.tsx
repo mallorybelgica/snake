@@ -1,13 +1,20 @@
-import React from "react";
 import styled from "styled-components";
 import Board from "./src/Board/Board";
+import Instructions from "./src/Instructions/Instructions";
 
 function App() {
   return (
-    <div>
+    <Wrapper>
       <Board />
-    </div>
+      <Instructions />
+    </Wrapper>
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

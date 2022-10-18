@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { foodSize, gameBoardSize } from "../../constants/constants";
+import {
+  foodSize,
+  gameBoardSize,
+  mobileGameBoardSize,
+} from "../../constants/constants";
 import Alert from "../Alert/Alert";
 import Food from "../Food/Food";
 import Snake from "../Snake/Snake";
@@ -37,8 +41,10 @@ const Board = () => {
   const [snakePieces, setSnakePieces] = useState(initialState.snakePieces);
 
   const generateFood = () => {
-    const randomTop = Math.random() * (gameBoardSize - foodSize);
-    const randomLeft = Math.random() * (gameBoardSize - foodSize);
+    const actualBoardSize =
+      window.innerWidth <= 480 ? mobileGameBoardSize : gameBoardSize;
+    const randomTop = Math.random() * (actualBoardSize - foodSize);
+    const randomLeft = Math.random() * (actualBoardSize - foodSize);
     const top = randomTop - (randomTop % 20);
     const left = randomLeft - (randomLeft % 20);
     setFoodPosition([left, top]);

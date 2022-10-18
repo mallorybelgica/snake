@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { gameBoardSize, mobileGameBoardSize } from "../../constants/constants";
 
 interface Props {
   isActive?: boolean;
@@ -24,11 +25,15 @@ export const GameBoard = styled.div`
   align-items: center;
   align-self: center;
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: ${gameBoardSize}px;
+  height: ${gameBoardSize}px;
   border: 1px solid #000;
   overflow: hidden;
   background-color: #fff;
+  @media (max-width: 480px) {
+    width: ${mobileGameBoardSize}px;
+    height: ${mobileGameBoardSize}px;
+  }
 `;
 
 export const SpeedText = styled.p`
@@ -42,7 +47,10 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
   align-content: center;
   align-self: center;
-  width: 600px;
+  width: ${gameBoardSize}px;
+  @media (max-width: 480px) {
+    width: ${mobileGameBoardSize}px;
+  }
 `;
 
 export const Score = styled.div`
